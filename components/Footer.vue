@@ -6,6 +6,7 @@
 
 <style scoped>
     #footer {
+        /* background-color: #040004; */
         position: fixed;
         bottom: 0;
     }

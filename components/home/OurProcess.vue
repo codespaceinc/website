@@ -1,0 +1,97 @@
+<template>
+    <b-container fluid>
+        <b-row>
+            <b-col cols="6">
+                <span id="ourProcess">OUR PROCESS</span>
+            </b-col>
+            <b-col cols="6">
+                <b-row>
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">01</p>
+                        <span class="step-title">Inquiry received.</span><br>
+                        <span class="description-text"> We'll schedule a discovery call within the next 2 business days</span>
+                        <span id="start-circle"></span>
+                    </b-col>
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">02</p>
+                        <span class="step-title">Discovery call.</span><br>
+                        <span class="description-text">We'll introduce ourselves and gather more details about your project</span>
+                    </b-col>
+                </b-row>
+                <b-row class="border-03-04">
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">03</p>
+                        <span class="step-title">Requirements analysis.</span><br>
+                        <span class="description-text">We'll meet with the team to discuss your project and come up with an estimate</span>
+                    </b-col>
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">04</p>
+                        <span class="step-title">Proposal.</span><br>
+                        <span class="description-text">We'll send you a proposal with estimated hours and project cost</span>
+                    </b-col>
+                </b-row>
+                <b-row class="border-05-06">
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">05</p>
+                        <span class="step-title">Work begins.</span><br>
+                        <span class="description-text">We assign a team consisting of developers, QAs and a project manager to work on your idea.</span>
+                    </b-col>
+                    <b-col cols="6">
+                        <p class="our-process-step space-blue">06</p>
+                        <span class="step-title">Handoff.</span><br>
+                        <span class="description-text">After a few iterations of change requests and testing we handoff the application</span>
+                    </b-col>
+                </b-row>
+            </b-col>
+        </b-row>
+    </b-container>
+</template>
+
+<style scoped>
+    #ourProcess {
+        font-size: 8em;
+        -webkit-text-stroke: 2px #ffffff;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+    }
+
+    .our-process-step {
+        font-size: 7em;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.05;
+        letter-spacing: 2.39px;
+    }
+
+    .step-title {
+        color: white;
+        font-weight: bold;
+        opacity: 1 !important;
+    }
+
+    #start-circle {
+        height: 40px !important;
+        width: 40px !important;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        position: absolute;
+        left: -14%;
+        top: 89%;
+        border-radius: 50%;
+    }
+
+    .border-03-04 {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        border-right: 1px solid rgba(255,255,255, 0.2);
+        border-bottom: 1px solid rgba(255,255,255, 0.5);
+    }
+    .border-05-06 {
+        border-left: 1px solid rgba(255,255,255, 0.2);
+        border-bottom: 1px solid rgba(255,255,255, 0.5);
+    }
+</style>

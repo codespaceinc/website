@@ -35,8 +35,4 @@
     .navbar-dark .navbar-nav .nav-link:hover {
         color: var(--space-blue) !important;
     }
-
-    .space-blue {
-        color: var(--space-blue) !important;
-    }
 </style>

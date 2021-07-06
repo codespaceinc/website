@@ -8,7 +8,7 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <p id="landingSubHeader">Custom web, mobile <br> and desktop development</p>
+                    <p id="landingSubHeader" class="description-text">Custom web, mobile <br> and desktop development</p>
                 </b-col>
             </b-row>
             <b-row>
@@ -39,6 +39,5 @@
         letter-spacing: 0.54px;
         text-align: left;
         color: #ffffff;
-        opacity: 0.7;
     }
 </style>

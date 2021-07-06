@@ -2,14 +2,29 @@
   <div id="main">
     <b-container>
         <b-row>
-            <b-col>
-              <Landing />
-            </b-col>
+          <b-col>
+            <Landing />
+          </b-col>
+        </b-row>
+        <b-row id="services">
+          <b-col>
+            <Services />
+          </b-col>
         </b-row>
         <b-row>
-            <b-col>
-              <Services />
-            </b-col>
+          <b-col>
+            <OurProcess />
+          </b-col>
+        </b-row>
+        <b-row>
+          <b-col>
+            <FAQ />
+          </b-col>
+        </b-row>
+        <b-row id="contact">
+          <b-col>
+            <ContactUs />
+          </b-col>
         </b-row>
     </b-container>
   </div>
@@ -24,8 +39,11 @@ export default {
 
 <style>
   #main {
-    background: url("~/assets/images/landing-lg.png") no-repeat;
-    background-size: 100% 100%;
+    background-image: url("~/assets/images/landing-lg.png");
+    /* background-position: top; */
+    background-size: contain;
+    background-repeat: no-repeat;
     background-color: #040004;
   }
+
 </style>
