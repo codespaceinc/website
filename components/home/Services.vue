@@ -1,5 +1,5 @@
 <template>
-    <b-container>
+    <b-container fluid>
         <b-row>
             <b-col cols="12" md="6">
                 <p class="title-text">WHO <br> WE ARE</p>

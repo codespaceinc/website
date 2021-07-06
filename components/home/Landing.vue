@@ -1,5 +1,4 @@
 <template>
-    <div id="landing">
         <b-container id="landingContainer" fluid>
             <b-row>
                 <b-col>
@@ -13,31 +12,22 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <b-button variant="outline-info" class="mr-2">GET A FREE QUOTE</b-button>
-                    <b-button variant="outline-info">SCHEDULE A CALL</b-button>
+                    <b-button class="p-2 mr-2" href="#contact" variant="outline-info">GET A FREE QUOTE</b-button>
+                    <b-button class="p-2" href="#contact" variant="outline-info">SCHEDULE A CALL</b-button>
                 </b-col>
             </b-row>
         </b-container>
-    </div>
 </template>
 
 <style scoped>
-    #landing {
-        height: 100vh;
-        width: 100%;
-    }
     #landingContainer {
+        height: 100vh;
         position: relative;
         top: 15%;
     }
     #landingSubHeader {
         font-size: 2em;
-        font-weight: normal;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.17;
-        letter-spacing: 0.54px;
-        text-align: left;
-        color: #ffffff;
+        line-height: 1;
+        color: white;
     }
 </style>
