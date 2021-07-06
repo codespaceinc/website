@@ -1,16 +1,16 @@
 <template>
     <b-container fluid>
         <b-row>
-            <b-col cols="6">
+            <b-col cols="12" md="3" class="my-auto">
                 <span id="ourProcess">OUR PROCESS</span>
             </b-col>
-            <b-col cols="6">
-                <b-row>
+            <b-col cols="12" md="9">
+                <b-row class="pb-3">
                     <b-col cols="6">
                         <p class="our-process-step space-blue">01</p>
                         <span class="step-title">Inquiry received.</span><br>
                         <span class="description-text"> We'll schedule a discovery call within the next 2 business days</span>
-                        <span id="start-circle"></span>
+                        <!-- <span id="start-circle"></span> -->
                     </b-col>
                     <b-col cols="6">
                         <p class="our-process-step space-blue">02</p>
@@ -18,7 +18,7 @@
                         <span class="description-text">We'll introduce ourselves and gather more details about your project</span>
                     </b-col>
                 </b-row>
-                <b-row class="border-03-04">
+                <b-row class="border-03-04 pb-3">
                     <b-col cols="6">
                         <p class="our-process-step space-blue">03</p>
                         <span class="step-title">Requirements analysis.</span><br>
@@ -30,7 +30,7 @@
                         <span class="description-text">We'll send you a proposal with estimated hours and project cost</span>
                     </b-col>
                 </b-row>
-                <b-row class="border-05-06">
+                <b-row class="border-05-06 pb-3">
                     <b-col cols="6">
                         <p class="our-process-step space-blue">05</p>
                         <span class="step-title">Work begins.</span><br>
@@ -49,23 +49,19 @@
 
 <style scoped>
     #ourProcess {
-        font-size: 8em;
-        -webkit-text-stroke: 2px #ffffff;
-        font-weight: bold;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        text-align: left;
+        font-size: 5em;
+        font-weight: bold;  
+        padding-top: 10px;
+        cursor: default;
+        line-height: 1;
     }
 
     .our-process-step {
         font-size: 7em;
         font-weight: 600;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.05;
+        line-height: 1;
         letter-spacing: 2.39px;
+        cursor: default;
     }
 
     .step-title {
@@ -74,7 +70,7 @@
         opacity: 1 !important;
     }
 
-    #start-circle {
+    /* #start-circle {
         height: 40px !important;
         width: 40px !important;
         border: 1px solid rgba(255, 255, 255, 0.5);
@@ -83,7 +79,7 @@
         left: -14%;
         top: 89%;
         border-radius: 50%;
-    }
+    } */
 
     .border-03-04 {
         border-top: 1px solid rgba(255,255,255,0.2);
@@ -94,4 +90,13 @@
         border-left: 1px solid rgba(255,255,255, 0.2);
         border-bottom: 1px solid rgba(255,255,255, 0.5);
     }
+
+    @media only screen and (min-width: 768px) {
+        #ourProcess {
+            border-top: 1px solid var(--space-blue);
+            font-size: 7em;
+            writing-mode: vertical-lr;
+        }
+    }
+
 </style>

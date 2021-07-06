@@ -6,22 +6,22 @@
             <Landing />
           </b-col>
         </b-row>
-        <b-row id="services">
+        <b-row id="services" class="mt-5">
           <b-col>
             <Services />
           </b-col>
         </b-row>
-        <b-row>
+        <b-row class="mt-5">
           <b-col>
             <OurProcess />
           </b-col>
         </b-row>
-        <b-row>
+        <b-row class="mt-5">
           <b-col>
             <FAQ />
           </b-col>
         </b-row>
-        <b-row id="contact">
+        <b-row id="contact" class="mt-5">
           <b-col>
             <ContactUs />
           </b-col>

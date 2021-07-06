@@ -1,7 +1,7 @@
 <template>
-    <b-container fluid style="margin-bottom:300px">
+    <b-container fluid id="contactUsContainer">
         <b-row>
-            <b-col cols="6">
+            <b-col cols="12" md="6" class="mb-3">
                 <p id="contactUs">CONTACT US</p>
                 <p><a class="space-blue" href="tel:+1 786 671 1390">+1 786 671 1390</a></p>
                 <div id="socialLinks">
@@ -10,7 +10,7 @@
                     <a class="h3 space-blue mr-3" href="#" target="_blank"><b-icon icon="instagram" /></a>
                 </div>
             </b-col>
-            <b-col cols="6">
+            <b-col cols="12" md="6">
                 <b-form @submit="onSubmit">
                     <b-form-group
                         label="Your Name"
@@ -72,7 +72,7 @@ export default {
     methods: {
       onSubmit(event) {
         event.preventDefault()
-        alert(JSON.stringify(this.form))
+        // alert(JSON.stringify(this.form))
 
         // Reset our form values
         this.form = {
@@ -85,14 +85,22 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    #contactUsContainer {
+        margin-bottom: 400px;
+    }
+
     #contactUs {
         font-size: 4em;
         font-weight: 600;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: 1.05;
+        line-height: 1;
         letter-spacing: 1.17px;
-        text-align: left;
     }
+    
+    @media only screen and (max-width: 768px) {
+        #contactUsContainer {
+            margin-bottom: 200px;
+        }
+    }
+
 </style>
