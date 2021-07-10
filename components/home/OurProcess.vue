@@ -39,7 +39,7 @@
                     <b-col cols="6">
                         <p class="our-process-step space-blue">06</p>
                         <span class="step-title">Handoff.</span><br>
-                        <span class="description-text">After a few iterations of change requests and testing we handoff the application</span>
+                        <span class="description-text">After a few iterations of change requests and testing we release the complete application</span>
                     </b-col>
                 </b-row>
             </b-col>

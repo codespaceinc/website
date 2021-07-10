@@ -1,11 +1,11 @@
 <template>
-    <div id="blog">
-        <!-- <h1>Space Blog</h1> -->
+    <div id="portfolio">
+
     </div>
 </template>
 
 <style>
-    #blog {
+    #portfolio {
         height: 100vh;
         background-image: url("~/assets/images/bg-lg.webp");
         background-size: cover;
