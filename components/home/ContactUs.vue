@@ -11,7 +11,7 @@
                 </div>
             </b-col>
             <b-col cols="12" md="6">
-                <b-form @submit="onSubmit">
+                <b-form @submit="onSubmit" id="contactForm">
                     <b-form-group
                         label="Your Name"
                         label-for="fullName">
@@ -51,7 +51,19 @@
                                 trim
                             ></b-form-textarea>
                     </b-form-group>
-                    <b-button type="submit" variant="outline-info">Send Message</b-button>
+                    <b-alert v-model="showSuccessAlert" variant="success" dismissible>
+                        Message sent!
+                    </b-alert>
+                    <b-alert v-model="showFailedAlert" variant="danger" dismissible>
+                        Message failed :(
+                    </b-alert>
+                    <b-button v-if="form.isSending" type="submit" variant="outline-info">
+                        <b-spinner variant="light" small></b-spinner>
+                        Sending...
+                    </b-button>
+                    <b-button v-else type="submit" variant="outline-info">
+                        Send message
+                    </b-button>
                 </b-form>
             </b-col>
         </b-row>
@@ -59,27 +71,46 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
     data() {
         return {
             form: {
                 fullName: null,
                 email: null,
-                message: null
-            }
+                message: null,
+                isSending: false
+            },
+            showSuccessAlert: false,
+            showFailedAlert: false
         }
     },
     methods: {
       onSubmit(event) {
-        event.preventDefault()
-        // alert(JSON.stringify(this.form))
+        event.preventDefault();
+        this.form.isSending = true;
 
-        // Reset our form values
-        this.form = {
-            fullName: null,
-            email: null,
-            message: null
-        }
+        const templateParams = {
+            sender_name: this.form.fullName,
+            sender_email: this.form.email,
+            sender_message: this.form.message
+        };
+
+        emailjs.send('default_service', 'contact_form', templateParams, "user_QZI5mBPq12OK9pHLMYqbP")
+            .then((response) => {
+                console.info('SUCCESS!', response.status, response.text);
+                this.showSuccessAlert = true;
+                this.form = {
+                    fullName: null,
+                    email: null,
+                    message: null
+                }
+            }, (err) => {
+                this.showFailedAlert = true;
+                console.error('Failed to send email...', err);
+            })
+            .finally(() => this.form.isSending = false)
       }
     }
 }
@@ -95,6 +126,10 @@ export default {
         font-weight: 600;
         line-height: 1;
         letter-spacing: 1.17px;
+    }
+
+    .form-control {
+        color:white;
     }
     
     @media only screen and (max-width: 768px) {
