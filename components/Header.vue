@@ -12,10 +12,10 @@
         <b-collapse id="header-nav-collapse" class="justify-content-end text-right" is-nav>
             <b-navbar-nav>
                 <b-nav-item to="/" active exact exact-active-class="space-blue">HOME</b-nav-item>
+                <b-nav-item v-if="$route.path === '/'" href="#contact" exact-active-class="space-blue">CONTACT</b-nav-item>
                 <!-- <b-nav-item href="/#services" exact-active-class="space-blue">SERVICES</b-nav-item> -->
                 <b-nav-item to="/portfolio" exact exact-active-class="space-blue">PORTFOLIO</b-nav-item>
                 <b-nav-item to="/blog" exact exact-active-class="space-blue">BLOG</b-nav-item>
-                <b-nav-item v-if="$route.path === '/'" href="#contact" exact-active-class="space-blue">CONTACT</b-nav-item>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>

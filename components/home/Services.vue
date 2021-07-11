@@ -1,7 +1,7 @@
 <template>
     <b-container fluid>
         <b-row>
-            <b-col cols="12" md="6">
+            <b-col cols="12" md="6" class="my-auto">
                 <p class="title-text">WHO <br> WE ARE</p>
                 <p class="description-text w-75">
                     Code Space Inc was founded in 2019 with a simple goal in mind: provide quality software development services and act as a trusted partner to startups, small and medium sized businesses.

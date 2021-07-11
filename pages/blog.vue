@@ -1,10 +1,11 @@
 <template>
     <div id="blog">
+        <UnderConstruction />
         <!-- <h1>Space Blog</h1> -->
     </div>
 </template>
 
-<style>
+<style scoped>
     #blog {
         height: 100vh;
         background-image: url("~/assets/images/bg-lg.webp");

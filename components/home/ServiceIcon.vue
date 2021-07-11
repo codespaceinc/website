@@ -11,11 +11,6 @@ export default {
     props: {
         name: String,
         icon: String
-    },
-    computed: {
-        iconPath() {
-            return "@/assets/images/logo.png";
-        }
     }
 }
 </script>

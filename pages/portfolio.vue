@@ -1,10 +1,10 @@
 <template>
     <div id="portfolio">
-
+        <UnderConstruction />
     </div>
 </template>
 
-<style>
+<style scoped>
     #portfolio {
         height: 100vh;
         background-image: url("~/assets/images/bg-lg.webp");
