@@ -13,7 +13,7 @@
             <b-row>
                 <b-col>
                     <b-button class="p-2 mr-2" href="#contact" variant="outline-info">GET A FREE QUOTE</b-button>
-                    <b-button class="p-2" href="#contact" variant="outline-info">SCHEDULE A CALL</b-button>
+                    <b-button class="p-2" href="https://calendly.com/codespaceinc/discovery-call" target="_blank" variant="outline-info">SCHEDULE A CALL</b-button>
                 </b-col>
             </b-row>
         </b-container>
