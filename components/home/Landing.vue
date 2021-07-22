@@ -1,5 +1,5 @@
 <template>
-        <b-container id="landingContainer" fluid>
+        <b-container id="landingContainer" fluid class="d-flex flex-column">
             <b-row>
                 <b-col>
                     <p class="title-text">SPACE <br> WHERE IDEAS <br> MEET THE REALITY</p>

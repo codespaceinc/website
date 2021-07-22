@@ -1,12 +1,15 @@
 <template>
-    <footer id="footer">
-        <img width="100%" src="~/assets/images/cockpit-lg.webp" alt="cockpit" />
+    <footer id="footer" class="w-100">
+        <img src="~/assets/images/cockpit.svg" alt="cockpit" />
     </footer>
 </template>
 
 <style scoped>
     #footer {
-        /* background-color: #040004; */
+        /* background-image: url("~/assets/images/cockpit.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #040004; */
         position: fixed;
         bottom: 0;
     }
