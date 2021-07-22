@@ -118,7 +118,7 @@ export default {
 
 <style scoped>
     #contactUsContainer {
-        margin-bottom: 400px;
+        margin-bottom: 300px;
     }
 
     #contactUs {
