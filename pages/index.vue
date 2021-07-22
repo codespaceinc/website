@@ -8,7 +8,7 @@
     <b-container>
         <b-row >
           <b-col>
-            <Landing style="height:100vh" />
+            <Landing :videoPaused="videoPaused" style="height:100vh" />
           </b-col>
         </b-row>
         <b-row id="services" class="mt-5">
@@ -38,16 +38,28 @@
 <script>
 
 export default {
+  data() {
+    return {
+      videoEl: null,
+      videoPaused: false
+    }
+  },
   mounted() {
-    this.$refs["spaceVideo"].addEventListener("timeupdate", function(e) {
-      console.log(this.duration)
-      console.log(e.timeStamp)
-        if (e.timeStamp > 7500) {
-          this.pause();
+    this.videoEl = this.$refs["spaceVideo"];
+    this.videoEl.addEventListener("timeupdate", this.onTimeUpdate)
+  },
+  beforeDestroy() {
+    this.videoEl.removeEventListener("timeupdate", this.onTimeUpdate);
+  },
 
-          this.classList.add("dim");
+  methods: {
+    onTimeUpdate(e) {
+      if (this.videoEl.duration - this.videoEl.currentTime < 0.5) {
+          this.videoEl.pause();
+          this.videoPaused = true;
+          this.videoEl.classList.add("dim");
         }
-    })
+    }
   }
 
 }
@@ -77,7 +89,7 @@ export default {
 
   .dim {
     transition: 1s;
-    filter: brightness(0.3);
+    filter: brightness(0.4);
   }
 
 </style>

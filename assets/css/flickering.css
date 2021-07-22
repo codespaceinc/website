@@ -1,0 +1,136 @@
+@keyframes text-flicker {
+    0% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    
+    2% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    8% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    9% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    12% {
+      opacity:0.1;
+      text-shadow: 0px 0px var(--space-blue);
+    }
+    20% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+    25% {
+      opacity:0.3;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+    30% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+    
+    70% {
+      opacity:0.7;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+    
+    72% {
+      opacity:0.2;
+      text-shadow:0px 0px 29px var(--space-blue)
+    }
+    
+    77% {
+      opacity:.9;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+    100% {
+      opacity:.9;
+      text-shadow: 0px 0px 29px var(--space-blue)
+    }
+  }
+  
+  @keyframes border-flicker {
+    0% {
+      opacity:0.1;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+    2% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+    4% {
+      opacity:0.1;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+    
+    8% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+    70% {
+      opacity:0.7;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+    100% {
+      opacity:1;
+      -webkit-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  -moz-box-shadow: 0px 0px 10px 1px var(--space-blue);
+  box-shadow: 0px 0px 10px 1px var(--space-blue);
+    }
+  }
+  
+  @keyframes letter-flicker {
+    0% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    2% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    4% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    
+    
+    19% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    21% {
+      opacity:0.1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    23% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    
+    80% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    83% {
+      opacity:0.4;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+    87% {
+      opacity:1;
+      text-shadow: 0px 0px 29px var(--space-blue);
+    }
+  }

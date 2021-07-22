@@ -12,14 +12,33 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <b-button class="p-2 mr-2" href="#contact" variant="outline-info">GET A FREE QUOTE</b-button>
+                    <b-button class="p-2 mr-2" href="#contact" variant="outline-info"><span :class="[videoPaused && 'get-quote']">GET A FREE QUOTE</span></b-button>
                     <b-button class="p-2" href="https://calendly.com/codespaceinc/discovery-call" target="_blank" variant="outline-info">SCHEDULE A CALL</b-button>
                 </b-col>
             </b-row>
         </b-container>
 </template>
 
+<script>
+export default {
+    props: {
+        videoPaused: Boolean
+    }
+}
+</script>
+
 <style scoped>
+
+    @import url("~/assets/css/flickering.css");
+
+    .get-quote {
+        animation: text-flicker 3s linear infinite;
+    }
+
+    .get-quote-flicker {
+        animation: border-flicker 2s linear infinite;
+    }
+
     #landingContainer {
         height: 100vh;
         position: relative;
