@@ -1,7 +1,7 @@
 <template>
   <div id="main">
     <div id="video">
-      <video ref="spaceVideo" autoplay muted id="myVideo">
+      <video ref="spaceVideo" autoplay muted id="bgVideo">
         <source src="~/assets/images/main.mp4" type="video/mp4">
       </video>
     </div>
@@ -82,14 +82,9 @@ export default {
     min-height: 100%;
   }
 
-  #myVideo {
+  #bgVideo {
     min-width: 100%;
     min-height: 100vh;
-  }
-
-  .dim {
-    transition: 1s;
-    filter: brightness(0.4);
   }
 
 </style>
