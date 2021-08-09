@@ -17,7 +17,8 @@
             <b-row class="pt-3">
                 <b-col cols="6" class="d-flex my-auto">
                     <label class="description-text text-uppercase mr-2 my-auto">SORT BY DATE: {{sortBy}}</label>
-                    <b-dropdown 
+                    <b-dropdown
+                        dropright
                         size="sm"
                         menu-class="dd-menu"
                         split-class="dd-split"
@@ -30,8 +31,14 @@
                     <b-input
                         id="articleSearch"
                         type="search"
-                        class="bg-transparent float-right w-50" 
-                        placeholder="Search"></b-input>
+                        class="bg-transparent float-right w-50"
+                        @input="onSearch"
+                        placeholder="Search" />
+                </b-col>
+            </b-row>
+            <b-row class="pt-5">
+                <b-col class="d-flex flex-row flex-wrap">
+                    <ArticleCard class="mr-4" v-for="article in articles" :key="article.id" :article="article" />
                 </b-col>
             </b-row>
         </b-container>
@@ -42,7 +49,34 @@
 export default {
     data() {
         return {
-            sortBy: 'Newest'
+            sortBy: 'Newest',
+            allArticles: [
+                {
+                    id: 1,
+                    date: new Date(),
+                    title: 'Blog Post #1',
+                    tags: ['article', 'howto'],
+                    preview: 'Custom, web, mobile and desktop development, Custom, web, mobile and desktop development, Custom, web, mobile and desktop development.'
+                },
+                {
+                    id: 2,
+                    date: new Date(),
+                    title: 'Blog Post #2',
+                    tags: ['howto'],
+                    preview: 'Custom, web, mobile and desktop development, Custom, web, mobile and desktop development, Custom, web, mobile and desktop development.'
+                }
+            ],
+            searchText: '',
+        }
+    },
+    computed: {
+        articles() {
+            return this.allArticles.filter(a => a.title.toUpperCase().includes(this.searchText.toUpperCase()))
+        }
+    },
+    methods: {
+        onSearch(value) {
+            this.searchText = value;
         }
     }
 }
@@ -60,12 +94,6 @@ export default {
 
     #blogContainer {
         padding-top: 120px;
-    }
-
-    .b-dropdown {
-        .dropdown-toggle {
-            padding: 0 10px !important;
-        }
     }
 
 </style>

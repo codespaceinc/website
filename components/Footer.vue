@@ -11,6 +11,6 @@
         background-size: contain;
         background-color: #040004; */
         position: fixed;
-        bottom: 0;
+        bottom: -15px;
     }
 </style>
