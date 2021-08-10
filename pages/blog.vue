@@ -84,7 +84,6 @@ export default {
 
 <style lang="scss">
     #blog {
-        height: 100vh;
         background-image: url("~/assets/images/bg-lg.webp");
         background-size: cover;
         background-repeat: no-repeat;
@@ -94,6 +93,8 @@ export default {
 
     #blogContainer {
         padding-top: 120px;
+        padding-bottom: 200px;
     }
+
 
 </style>

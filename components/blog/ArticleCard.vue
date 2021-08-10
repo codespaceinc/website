@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
     .article-card {
-        padding: 10px;
+        padding: 15px;
         border: 1px solid #808080;
         border-radius: 10px;
         background-color: rgba(0,0,0,0.5);
