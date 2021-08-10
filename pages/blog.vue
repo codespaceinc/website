@@ -69,6 +69,9 @@ export default {
             searchText: '',
         }
     },
+    beforeMount() {
+        this.$content("blog").fetch().then(posts => console.log(posts));
+    },
     computed: {
         articles() {
             return this.allArticles.filter(a => a.title.toUpperCase().includes(this.searchText.toUpperCase()))
