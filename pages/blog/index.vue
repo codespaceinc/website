@@ -1,6 +1,5 @@
 <template>
     <div id="blog">
-        <!-- <UnderConstruction /> -->
         <b-container id="blogContainer">
             <b-row>
                 <b-col>
@@ -16,15 +15,15 @@
             </b-row>
             <b-row class="pt-3">
                 <b-col cols="6" class="d-flex my-auto">
-                    <label class="description-text text-uppercase mr-2 my-auto">SORT BY DATE: {{sortBy}}</label>
-                    <b-dropdown
+                    <label class="description-text text-uppercase mr-2 my-auto">SORT BY DATE: {{sortByText}}</label>
+                    <b-dropdown @change="onSortBy"
                         dropright
                         size="sm"
                         menu-class="dd-menu"
-                        split-class="dd-split"
+                        toggle-class="dd-toggle"
                         variant="outline-info">
-                        <b-dd-item link-class="space-blue">Newest</b-dd-item>
-                        <b-dd-item link-class="space-blue">Oldest</b-dd-item>
+                        <b-dd-item-btn @click="onSortBy('asc')">Newest</b-dd-item-btn>
+                        <b-dd-item-btn @click="onSortBy('desc')">Oldest</b-dd-item-btn>
                     </b-dropdown>
                 </b-col>
                 <b-col cols="6" class="clearfix">
@@ -32,13 +31,14 @@
                         id="articleSearch"
                         type="search"
                         class="bg-transparent float-right w-50"
-                        @input="onSearch"
+                        @change="onSearch"
+                        debounce="500"
                         placeholder="Search" />
                 </b-col>
             </b-row>
-            <b-row class="pt-5">
+            <b-row v-if="articles.length" class="pt-5">
                 <b-col class="d-flex flex-row flex-wrap">
-                    <ArticleCard class="mr-4" v-for="article in articles" :key="article.id" :article="article" />
+                    <ArticleCard class="mr-4" v-for="article in articles" :key="article.slug" :article="article" />
                 </b-col>
             </b-row>
         </b-container>
@@ -49,37 +49,48 @@
 export default {
     data() {
         return {
-            sortBy: 'Newest',
-            allArticles: [
-                {
-                    id: 1,
-                    date: new Date(),
-                    title: 'Blog Post #1',
-                    tags: ['article', 'howto'],
-                    preview: 'Custom, web, mobile and desktop development, Custom, web, mobile and desktop development, Custom, web, mobile and desktop development.'
-                },
-                {
-                    id: 2,
-                    date: new Date(),
-                    title: 'Blog Post #2',
-                    tags: ['howto'],
-                    preview: 'Custom, web, mobile and desktop development, Custom, web, mobile and desktop development, Custom, web, mobile and desktop development.'
-                }
-            ],
+            articles: [],
+            sortByDirection: 'asc',
             searchText: '',
         }
     },
-    beforeMount() {
-        this.$content("blog").fetch().then(posts => console.log(posts));
+    async asyncData({ $content }) {
+        const articles = await $content("blog")
+            .without(['body'])
+            .limit(10)
+            .fetch();
+
+        console.log({articles});
+        return {
+            articles
+        }
     },
     computed: {
-        articles() {
-            return this.allArticles.filter(a => a.title.toUpperCase().includes(this.searchText.toUpperCase()))
+        sortByText() {
+            return this.sortByDirection === 'asc' ? 'Newest' : 'Oldest'
         }
     },
     methods: {
-        onSearch(value) {
-            this.searchText = value;
+        async onSearch(value) {
+            if(!value) {
+                this.articles = await this.$content("blog")
+                    .only(['thumbnail', 'title', 'date'])
+                    .limit(10)
+                    .sortBy('date', this.sortByDirection)
+                    .fetch();
+            }
+            else {
+                this.articles = await this.$content("blog")
+                    .search('title', value)
+                    .only(['thumbnail', 'title', 'date'])
+                    .limit(10)
+                    .sortBy('date', this.sortByDirection)
+                    .fetch();
+            }
+        },
+        onSortBy(value) {
+            this.sortByDirection = value;
+            this.onSearch();
         }
     }
 }
@@ -95,6 +106,7 @@ export default {
     }
 
     #blogContainer {
+        min-height: 100vh;
         padding-top: 120px;
         padding-bottom: 200px;
     }

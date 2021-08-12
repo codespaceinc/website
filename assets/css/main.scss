@@ -36,11 +36,6 @@ body {
   box-shadow: 0px 0px 8px 1px $space-blue;
 }
 
-.b-dropdown {
-  .dropdown-toggle {
-      padding: 0 10px !important;
-  }
-}
 
 /* overrides end */
 
@@ -66,7 +61,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .dd-menu {
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.4);
   color: $space-blue;
   border: 1px solid $space-blue;
 
@@ -82,4 +77,11 @@ input::placeholder, textarea::placeholder {
   }
 }
 
+.dd-toggle {
+  padding: 0 10px !important;
+}
 
+.dd-item-btn-active-class {
+  background-color: $space-blue;
+  color: black !important;
+}
