@@ -27,13 +27,20 @@
                     </b-dropdown>
                 </b-col>
                 <b-col cols="6" class="clearfix">
-                    <b-input
-                        id="articleSearch"
-                        type="search"
-                        class="bg-transparent float-right w-50"
-                        @change="onSearch"
-                        debounce="500"
-                        placeholder="Search" />
+                    <b-input-group class="input-search-group w-50 float-right">
+                        <b-form-input
+                            id="articleSearch"
+                            type="search"
+                            class="bg-transparent"
+                            @input="onSearch"
+                            debounce="500"
+                            placeholder="Title search.." />
+                        <b-input-group-append>
+                            <b-input-group-text>
+                                <b-icon icon="search" />
+                            </b-input-group-text>
+                        </b-input-group-append>
+                    </b-input-group>
                 </b-col>
             </b-row>
             <b-row v-if="articles.length" class="pt-5">
@@ -109,6 +116,10 @@ export default {
         min-height: 100vh;
         padding-top: 120px;
         padding-bottom: 200px;
+    }
+
+    #articleSearch {
+        border-right: none !important;
     }
 
 

@@ -60,6 +60,16 @@ input::placeholder, textarea::placeholder {
   font-style: italic;
 }
 
+.input-search-group {
+  border-right: none;
+  .input-group-text {
+    background: transparent;
+    border-color: $space-blue;
+    border-left: none;
+    color: $space-blue;
+  }
+}
+
 .dd-menu {
   background-color: rgba(0,0,0,0.4);
   color: $space-blue;
