@@ -7,7 +7,7 @@
         style="max-width: 20rem;"
         class="article-card">
         <div v-if="article.tags" class="mb-1">
-            <b-badge v-for="tag in article.tags" :key="tag" variant="info" class="bg-transparent mr-1 px-2 text-capitalize space-blue space-blue-border">{{tag}}</b-badge>
+            <b-badge v-for="tag in article.tags" :key="tag" variant="info" class="bg-transparent mr-1 px-2 text-capitalize space-blue border border-info">{{tag}}</b-badge>
         </div>
 
         <b-card-title class="space-blue text-uppercase">

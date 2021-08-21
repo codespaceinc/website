@@ -52,9 +52,9 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
-    '~/components',
-    '~/components/home',
-    '~/components/blog'
+    '@/components',
+    '@/components/home',
+    '@/components/blog'
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -69,7 +69,9 @@ export default {
   ],
 
   bootstrapVue: {
-    icons: true
+    icons: true,
+    bootstrapCSS: false, 
+    bootstrapVueCSS: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

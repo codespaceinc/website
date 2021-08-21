@@ -2,6 +2,23 @@
 
 $space-blue: #72edfe;
 
+/* bootstrap overrides */
+
+$info: $space-blue;
+
+// .btn-outline-info:hover {
+//   color: black !important;
+//   font-weight: bold;
+//   background-color: $space-blue;
+//   box-shadow: 0px 0px 8px 1px $space-blue;
+// }
+
+/* overrides end */
+
+// import boostrap variables. they are all !default so will be overwritten with matching vars above ^
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue/src/index.scss';
+
 body {
   font-family: "Rajdhani", sans-serif;
   color: white;
@@ -23,9 +40,10 @@ body {
   filter: brightness(0.5);
 }
 
-/* overrides */
 
-.btn-outline-info {
+/* theme */
+
+.space-blue {
   color: $space-blue !important;
 }
 
@@ -34,20 +52,6 @@ body {
   font-weight: bold;
   background-color: $space-blue;
   box-shadow: 0px 0px 8px 1px $space-blue;
-}
-
-
-/* overrides end */
-
-
-/* theme */
-
-.space-blue {
-  color: $space-blue !important;
-}
-
-.space-blue-border {
-  border: 1px solid $space-blue;
 }
 
 input, textarea {
@@ -71,7 +75,7 @@ input::placeholder, textarea::placeholder {
 }
 
 .dd-menu {
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba($black, .5);
   color: $space-blue;
   border: 1px solid $space-blue;
 
@@ -91,7 +95,4 @@ input::placeholder, textarea::placeholder {
   padding: 0 10px !important;
 }
 
-.dd-item-btn-active-class {
-  background-color: $space-blue;
-  color: black !important;
-}
+/* theme end */
