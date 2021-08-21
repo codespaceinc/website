@@ -22,8 +22,8 @@
                         menu-class="dd-menu"
                         toggle-class="dd-toggle"
                         variant="outline-info">
-                        <b-dd-item-btn @click="onSortBy('asc')">Newest</b-dd-item-btn>
-                        <b-dd-item-btn @click="onSortBy('desc')">Oldest</b-dd-item-btn>
+                        <b-dd-item-btn @click="onSortBy('desc')">Newest</b-dd-item-btn>
+                        <b-dd-item-btn @click="onSortBy('asc')">Oldest</b-dd-item-btn>
                     </b-dropdown>
                 </b-col>
                 <b-col sm="12" md="6">
@@ -43,8 +43,8 @@
                 </b-col>
             </b-row>
             <b-row v-if="articles.length" class="pt-5">
-                <b-col class="d-flex flex-no-wrap flex-md-wrap justify-content-center justify-content-md-start">
-                    <ArticleCard class="mr-4" v-for="article in articles" :key="article.slug" :article="article" />
+                <b-col sm="1" md="4" lg="3" v-for="article in articles" :key="article.slug">
+                    <ArticleCard :article="article" />
                 </b-col>
             </b-row>
         </b-container>
@@ -56,13 +56,13 @@ export default {
     data() {
         return {
             articles: [],
-            sortByDirection: 'asc',
+            sortByDirection: 'desc',
             searchText: '',
         }
     },
     async asyncData({ $content }) {
         const articles = await $content("blog")
-            .only(['thumbnail', 'title', 'date'])
+            .only(['thumbnail', 'title', 'date', 'tags'])
             .limit(10)
             .fetch();
 
@@ -73,14 +73,14 @@ export default {
     },
     computed: {
         sortByText() {
-            return this.sortByDirection === 'asc' ? 'Newest' : 'Oldest'
+            return this.sortByDirection === 'asc' ? 'Oldest' : 'Newest'
         }
     },
     methods: {
         async onSearch(value) {
             if(!value) {
                 this.articles = await this.$content("blog")
-                    .only(['thumbnail', 'title', 'date'])
+                    .only(['thumbnail', 'title', 'date', 'tags'])
                     .sortBy('date', this.sortByDirection)
                     .limit(10)
                     .fetch();
@@ -88,7 +88,7 @@ export default {
             else {
                 this.articles = await this.$content("blog")
                     .search('title', value)
-                    .only(['thumbnail', 'title', 'date'])
+                    .only(['thumbnail', 'title', 'date', 'tags'])
                     .sortBy('date', this.sortByDirection)
                     .limit(10)
                     .fetch();
