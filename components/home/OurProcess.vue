@@ -70,17 +70,6 @@
         opacity: 1 !important;
     }
 
-    /* #start-circle {
-        height: 40px !important;
-        width: 40px !important;
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        display: inline-block;
-        position: absolute;
-        left: -14%;
-        top: 89%;
-        border-radius: 50%;
-    } */
-
     .border-03-04 {
         border-top: 1px solid rgba(255,255,255,0.2);
         border-right: 1px solid rgba(255,255,255, 0.2);

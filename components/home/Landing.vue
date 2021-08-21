@@ -12,8 +12,8 @@
             </b-row>
             <b-row>
                 <b-col>
-                    <b-button class="p-2 mr-2" href="#contact" variant="outline-info"><span :class="[videoPaused && 'get-quote']">GET A FREE QUOTE</span></b-button>
-                    <b-button class="p-2" href="https://calendly.com/codespaceinc/discovery-call" target="_blank" variant="outline-info">SCHEDULE A CALL</b-button>
+                    <b-button class="p-2 mr-2" href="#contact" variant="outline-primary"><span :class="[videoPaused && 'get-quote']">GET A FREE QUOTE</span></b-button>
+                    <b-button class="p-2" href="https://calendly.com/codespaceinc/discovery-call" target="_blank" variant="outline-primary">SCHEDULE A CALL</b-button>
                 </b-col>
             </b-row>
         </b-container>

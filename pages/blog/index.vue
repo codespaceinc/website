@@ -1,6 +1,6 @@
 <template>
     <div id="blog">
-        <b-container id="blogContainer">
+        <b-container id="container">
             <b-row>
                 <b-col>
                     <h1 class="title-text">Space Blog</h1>
@@ -8,9 +8,9 @@
             </b-row>
             <b-row class="pt-3">
                 <b-col>
-                    <b-button class="mr-2" variant="outline-info">All</b-button>
-                    <b-button class="mr-2" variant="outline-info">Articles</b-button>
-                    <b-button variant="outline-info">Guides</b-button>
+                    <b-button class="mr-2" variant="outline-primary">All</b-button>
+                    <b-button class="mr-2" variant="outline-primary">Articles</b-button>
+                    <b-button variant="outline-primary">Guides</b-button>
                 </b-col>
             </b-row>
             <b-row class="pt-3">
@@ -21,7 +21,7 @@
                         size="sm"
                         menu-class="dd-menu"
                         toggle-class="dd-toggle"
-                        variant="outline-info">
+                        variant="outline-primary">
                         <b-dd-item-btn @click="onSortBy('desc')">Newest</b-dd-item-btn>
                         <b-dd-item-btn @click="onSortBy('asc')">Oldest</b-dd-item-btn>
                     </b-dropdown>
@@ -63,7 +63,7 @@ export default {
     async asyncData({ $content }) {
         const articles = await $content("blog")
             .only(['thumbnail', 'title', 'date', 'tags'])
-            .limit(10)
+            // .limit(10)
             .fetch();
 
         // console.log({articles});
@@ -82,7 +82,7 @@ export default {
                 this.articles = await this.$content("blog")
                     .only(['thumbnail', 'title', 'date', 'tags'])
                     .sortBy('date', this.sortByDirection)
-                    .limit(10)
+                    // .limit(10)
                     .fetch();
             }
             else {
@@ -90,7 +90,7 @@ export default {
                     .search('title', value)
                     .only(['thumbnail', 'title', 'date', 'tags'])
                     .sortBy('date', this.sortByDirection)
-                    .limit(10)
+                    // .limit(10)
                     .fetch();
             }
         },
@@ -102,7 +102,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #blog {
         background-image: url("~/assets/images/bg-lg.webp");
         background-size: cover;
@@ -111,7 +111,7 @@ export default {
         background-color: #040004;
     }
 
-    #blogContainer {
+    #container {
         min-height: 100vh;
         padding-top: 120px;
         padding-bottom: 200px;

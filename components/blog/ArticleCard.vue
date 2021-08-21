@@ -6,10 +6,10 @@
         tag="article"
         class="article-card mb-4">
         <div v-if="article.tags" class="mb-1">
-            <b-badge v-for="tag in article.tags" :key="tag" variant="info" class="bg-transparent mr-1 px-2 text-capitalize space-blue border border-info font-weight-normal">{{tag}}</b-badge>
+            <b-badge v-for="tag in article.tags" :key="tag" variant="info" class="bg-transparent mr-1 px-2 text-capitalize text-primary border border-info font-weight-normal">{{tag}}</b-badge>
         </div>
 
-        <b-card-title class="space-blue text-uppercase">
+        <b-card-title class="text-primary text-uppercase">
             {{ article.title }}
         </b-card-title>
 
@@ -22,7 +22,7 @@
         </b-card-text>
 
         <b-card-footer class="p-0">
-            <b-button :to="article.path" variant="outline-info">Read More</b-button>
+            <b-button :to="article.path" variant="outline-primary">Read More</b-button>
         </b-card-footer>
   </b-card>
 </template>

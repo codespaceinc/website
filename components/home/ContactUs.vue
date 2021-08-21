@@ -57,11 +57,11 @@
                     <b-alert v-model="showFailedAlert" variant="danger" dismissible>
                         Message failed :(
                     </b-alert>
-                    <b-button v-if="form.isSending" type="submit" variant="outline-info">
+                    <b-button v-if="form.isSending" type="submit" variant="outline-primary">
                         <b-spinner variant="light" small></b-spinner>
                         Sending...
                     </b-button>
-                    <b-button v-else type="submit" variant="outline-info">
+                    <b-button v-else type="submit" variant="outline-primary">
                         Send message
                     </b-button>
                 </b-form>
