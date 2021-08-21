@@ -15,7 +15,8 @@
                 <!-- <b-nav-item href="/#services" exact-active-class="space-blue">SERVICES</b-nav-item> -->
                 <b-nav-item to="/portfolio" exact exact-active-class="space-blue">PORTFOLIO</b-nav-item>
                 <b-nav-item to="/blog" active-class="space-blue">BLOG</b-nav-item>
-                <b-nav-item v-if="$route.path === '/'" href="#contact" exact-active-class="space-blue">CONTACT</b-nav-item>
+                <b-nav-item v-if="$route.path === '/'" href="#contact" active-class="space-blue">CONTACT</b-nav-item>
+                <b-nav-item v-else to="/#contact" active-class="space-blue">CONTACT</b-nav-item>
             </b-navbar-nav>
         </b-collapse>
     </b-navbar>

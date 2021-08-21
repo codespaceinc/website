@@ -8,9 +8,9 @@
             </b-row>
             <b-row class="pt-3">
                 <b-col>
-                    <b-button class="mr-2" variant="outline-primary">All</b-button>
-                    <b-button class="mr-2" variant="outline-primary">Articles</b-button>
-                    <b-button variant="outline-primary">Guides</b-button>
+                    <b-button :class="['mr-2', articlesFilter === 'all' && 'active-btn']" variant="outline-primary" @click="articlesFilter = 'all'">All</b-button>
+                    <b-button :class="['mr-2', articlesFilter === 'article' && 'active-btn']" variant="outline-primary" @click="articlesFilter = 'article'">Articles</b-button>
+                    <b-button :class="['mr-2', articlesFilter === 'guide' && 'active-btn']" variant="outline-primary" @click="articlesFilter = 'guide'">Guides</b-button>
                 </b-col>
             </b-row>
             <b-row class="pt-3">
@@ -42,8 +42,8 @@
                     </b-input-group>
                 </b-col>
             </b-row>
-            <b-row v-if="articles.length" class="pt-5">
-                <b-col sm="1" md="4" lg="3" v-for="article in articles" :key="article.slug">
+            <b-row v-if="displayedArticles.length" class="pt-5">
+                <b-col sm="1" md="4" lg="3" v-for="article in displayedArticles" :key="article.slug">
                     <ArticleCard :article="article" />
                 </b-col>
             </b-row>
@@ -58,6 +58,7 @@ export default {
             articles: [],
             sortByDirection: 'desc',
             searchText: '',
+            articlesFilter: 'all'
         }
     },
     async asyncData({ $content }) {
@@ -74,6 +75,11 @@ export default {
     computed: {
         sortByText() {
             return this.sortByDirection === 'asc' ? 'Oldest' : 'Newest'
+        },
+        displayedArticles() {
+            return this.articlesFilter === 'all'
+                ? this.articles
+                : this.articles.filter(a => a.tags.includes(this.articlesFilter));
         }
     },
     methods: {

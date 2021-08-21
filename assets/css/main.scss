@@ -55,7 +55,7 @@ body {
   color: $space-blue !important;
 }
 
-.btn-outline-primary:hover {
+.active-btn, .btn-outline-primary:hover {
   color: black !important;
   font-weight: bold;
   background-color: $space-blue;
