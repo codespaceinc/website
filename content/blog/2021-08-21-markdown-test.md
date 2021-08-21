@@ -273,7 +273,7 @@ title: Markdown test
 date: 2021-08-21T16:56:11.105Z
 tags:
   - article
-thumbnail: /images/blog-post-thumbnail-default.png
+thumbnail: /images/uploads/2021-member-badge.png
 ---
 
 # h1 Heading 8-)
